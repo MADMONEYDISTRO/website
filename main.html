@@ -1,0 +1,1520 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Available Pups - Swinging Gate Labradoodles</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Nunito:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    
+    @keyframes pawPrint {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.1); }
+    }
+    
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    
+    .animate-scale-in {
+      animation: scaleIn 0.5s ease-out forwards;
+    }
+    
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .animate-shimmer {
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      background-size: 200% 100%;
+      animation: shimmer 2s infinite;
+    }
+    
+    .animate-paw {
+      animation: pawPrint 2s ease-in-out infinite;
+    }
+    
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    .delay-500 { animation-delay: 0.5s; }
+    .delay-600 { animation-delay: 0.6s; }
+    
+    .puppy-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .puppy-card:hover {
+      transform: translateY(-12px) scale(1.02);
+    }
+    
+    .puppy-card:hover .puppy-image {
+      transform: scale(1.1);
+    }
+    
+    .puppy-card:hover .puppy-overlay {
+      opacity: 1;
+    }
+    
+    .btn-primary {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px -10px rgba(139, 90, 43, 0.5);
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #8B5A2B, #D4A574, #8B5A2B);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .glass-card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    .paw-bg {
+      position: absolute;
+      font-size: 60px;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+    
+    .scroll-indicator {
+      animation: float 2s ease-in-out infinite;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #FDF6EE;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #D4A574, #8B5A2B);
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #C4956A, #7A4F26);
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="app-wrapper" class="w-full h-full overflow-auto" style="background: linear-gradient(135deg, #FDF6EE 0%, #FAF0E4 50%, #F5E6D3 100%);"><!-- Floating Paw Prints Background -->
+   <div class="paw-bg animate-paw" style="top: 10%; left: 5%;">
+    🐾
+   </div>
+   <div class="paw-bg animate-paw delay-300" style="top: 30%; right: 8%;">
+    🐾
+   </div>
+   <div class="paw-bg animate-paw delay-500" style="top: 60%; left: 3%;">
+    🐾
+   </div>
+   <div class="paw-bg animate-paw delay-200" style="top: 80%; right: 5%;">
+    🐾
+   </div><!-- Navigation -->
+   <nav class="fixed top-0 left-0 right-0 z-50 glass-card animate-fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex justify-between items-center h-16 sm:h-20">
+      <div class="flex items-center space-x-2"><span class="text-2xl sm:text-3xl">🐕</span> <span class="font-bold text-lg sm:text-xl" style="font-family: 'Playfair Display', serif; color: #5D4037;"> Swinging Gate </span>
+      </div>
+      <div class="hidden md:flex items-center space-x-8"><a href="#" class="text-sm font-medium transition-colors hover:text-amber-700" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Home</a> <a href="#" class="text-sm font-medium transition-colors hover:text-amber-700" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Our Dogs</a> <a href="#" class="text-sm font-medium border-b-2 border-amber-600" style="font-family: 'Nunito', sans-serif; color: #8B5A2B;">Available Pups</a> <a href="#" class="text-sm font-medium transition-colors hover:text-amber-700" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">About Us</a> <a href="#" class="text-sm font-medium transition-colors hover:text-amber-700" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Contact</a>
+      </div><button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-amber-100 transition-colors">
+       <svg class="w-6 h-6" style="color: #5D4037;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+       </svg></button>
+     </div>
+    </div><!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden glass-card border-t" style="border-color: rgba(139, 90, 43, 0.1);">
+     <div class="px-4 py-3 space-y-2"><a href="#" class="block py-2 text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Home</a> <a href="#" class="block py-2 text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Our Dogs</a> <a href="#" class="block py-2 text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #8B5A2B;">Available Pups</a> <a href="#" class="block py-2 text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">About Us</a> <a href="#" class="block py-2 text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Contact</a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section class="relative pt-24 sm:pt-32 pb-16 sm:pb-24 px-4">
+    <div class="max-w-7xl mx-auto text-center">
+     <div class="animate-fade-in-up opacity-0" style="animation-fill-mode: forwards;"><span class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-6" style="font-family: 'Nunito', sans-serif; background: rgba(212, 165, 116, 0.3); color: #8B5A2B;"> 🐾 Miniature Australian Labradoodles </span>
+     </div>
+     <h1 id="hero-title" class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up opacity-0 delay-100" style="font-family: 'Playfair Display', serif; color: #3E2723; animation-fill-mode: forwards;">Find Your Perfect<br><span class="gradient-text">Companion</span></h1>
+     <p id="hero-subtitle" class="text-lg sm:text-xl max-w-2xl mx-auto mb-10 animate-fade-in-up opacity-0 delay-200" style="font-family: 'Nunito', sans-serif; color: #6D4C41; animation-fill-mode: forwards;">Discover our adorable, hypoallergenic puppies raised with love in a family environment. Each one is ready to bring joy to your home.</p>
+     <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up opacity-0 delay-300" style="animation-fill-mode: forwards;"><a href="#puppies" class="btn-primary inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-semibold shadow-lg" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D);"> <span>View Available Pups</span>
+       <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+       </svg></a> <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold border-2 transition-all hover:bg-amber-50" style="font-family: 'Nunito', sans-serif; border-color: #8B5A2B; color: #8B5A2B;"> Contact Us </a>
+     </div><!-- Scroll Indicator -->
+     <div class="scroll-indicator mt-16 animate-fade-in opacity-0 delay-500" style="animation-fill-mode: forwards;">
+      <svg class="w-8 h-8 mx-auto" style="color: #D4A574;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+     </div>
+    </div>
+   </section><!-- Stats Section -->
+   <section class="py-12 sm:py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="glass-card rounded-2xl p-6 text-center animate-scale-in opacity-0" style="animation-fill-mode: forwards;">
+       <div class="text-3xl sm:text-4xl font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #8B5A2B;">
+        150+
+       </div>
+       <div class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">
+        Happy Families
+       </div>
+      </div>
+      <div class="glass-card rounded-2xl p-6 text-center animate-scale-in opacity-0 delay-100" style="animation-fill-mode: forwards;">
+       <div class="text-3xl sm:text-4xl font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #8B5A2B;">
+        10+
+       </div>
+       <div class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">
+        Years Experience
+       </div>
+      </div>
+      <div class="glass-card rounded-2xl p-6 text-center animate-scale-in opacity-0 delay-200" style="animation-fill-mode: forwards;">
+       <div class="text-3xl sm:text-4xl font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #8B5A2B;">
+        100%
+       </div>
+       <div class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">
+        Health Tested
+       </div>
+      </div>
+      <div class="glass-card rounded-2xl p-6 text-center animate-scale-in opacity-0 delay-300" style="animation-fill-mode: forwards;">
+       <div class="text-3xl sm:text-4xl font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #8B5A2B;">
+        5⭐
+       </div>
+       <div class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">
+        Average Rating
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Available Puppies Section -->
+   <section id="puppies" class="py-16 sm:py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-center mb-12 sm:mb-16"><span class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-4" style="font-family: 'Nunito', sans-serif; background: rgba(212, 165, 116, 0.3); color: #8B5A2B;"> ✨ Available Now </span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Playfair Display', serif; color: #3E2723;">Meet Our Adorable Pups</h2>
+      <p class="text-lg max-w-2xl mx-auto" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Each puppy comes with health guarantee, vaccinations, and lifetime breeder support</p>
+     </div><!-- Filter Tabs -->
+     <div class="flex flex-wrap justify-center gap-3 mb-10"><button class="filter-btn active px-6 py-3 rounded-full font-medium transition-all" style="font-family: 'Nunito', sans-serif; background: #8B5A2B; color: white;" data-filter="all"> All Pups </button> <button class="filter-btn px-6 py-3 rounded-full font-medium transition-all hover:bg-amber-100" style="font-family: 'Nunito', sans-serif; background: rgba(212, 165, 116, 0.3); color: #8B5A2B;" data-filter="available"> Available </button> <button class="filter-btn px-6 py-3 rounded-full font-medium transition-all hover:bg-amber-100" style="font-family: 'Nunito', sans-serif; background: rgba(212, 165, 116, 0.3); color: #8B5A2B;" data-filter="reserved"> Reserved </button>
+     </div><!-- Puppies Grid -->
+     <div id="puppies-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"><!-- Puppy Card 1 -->
+      <div class="puppy-card glass-card rounded-3xl overflow-hidden shadow-lg" data-status="available">
+       <div class="relative overflow-hidden aspect-square">
+        <img src="https://swinginggatelabradoodles.com/wp-content/uploads/2026/02/image0.jpeg" alt="Bella - Caramel Cream Female" class="puppy-image w-full h-full transition-transform duration-500 object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #F5E6D3, #E8D5C4)'; this.alt='Puppy image unavailable';">
+        <div class="puppy-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6"><button class="w-full py-3 rounded-full font-semibold text-white transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D);"> Learn More </button>
+        </div><span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold text-white" style="background: linear-gradient(135deg, #4CAF50, #66BB6A);"> Available </span> <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium glass-card" style="color: #8B5A2B;"> ♀ Female </span>
+       </div>
+       <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+         <div>
+          <h3 class="text-xl font-bold mb-1" style="font-family: 'Playfair Display', serif; color: #3E2723;">Bella</h3>
+          <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #8D6E63;">Caramel Cream</p>
+         </div>
+         <div class="text-right">
+          <p class="text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">8 weeks</p>
+         </div>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Miniature</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Fleece Coat</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Hypoallergenic</span>
+        </div>
+        <p class="text-sm mb-4" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">A sweet, playful girl with the softest caramel coat. Loves cuddles and is great with kids!</p>
+        <div class="flex justify-center pt-4 border-t" style="border-color: rgba(139, 90, 43, 0.1);"><button class="px-6 py-2 rounded-full text-sm font-medium transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D); color: white;"> Inquire Now </button>
+        </div>
+       </div>
+      </div><!-- Puppy Card 2 -->
+      <div class="puppy-card glass-card rounded-3xl overflow-hidden shadow-lg" data-status="available">
+       <div class="relative overflow-hidden aspect-square">
+        <img src="https://swinginggatelabradoodles.com/wp-content/uploads/2024/09/IMG_8934.jpeg" alt="Cooper - Chocolate Male" class="puppy-image w-full h-full transition-transform duration-500 object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #D7CCC8, #BCAAA4)'; this.alt='Puppy image unavailable';">
+        <div class="puppy-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6"><button class="w-full py-3 rounded-full font-semibold text-white transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D);"> Learn More </button>
+        </div><span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold text-white" style="background: linear-gradient(135deg, #4CAF50, #66BB6A);"> Available </span> <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium glass-card" style="color: #8B5A2B;"> ♂ Male </span>
+       </div>
+       <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+         <div>
+          <h3 class="text-xl font-bold mb-1" style="font-family: 'Playfair Display', serif; color: #3E2723;">Cooper</h3>
+          <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #8D6E63;">Chocolate</p>
+         </div>
+         <div class="text-right">
+          <p class="text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">9 weeks</p>
+         </div>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Miniature</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Wool Coat</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Low Shedding</span>
+        </div>
+        <p class="text-sm mb-4" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">An adventurous spirit with a heart of gold. Cooper is smart, trainable, and full of energy!</p>
+        <div class="flex justify-center pt-4 border-t" style="border-color: rgba(139, 90, 43, 0.1);"><button class="px-6 py-2 rounded-full text-sm font-medium transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D); color: white;"> Inquire Now </button>
+        </div>
+       </div>
+      </div><!-- Puppy Card 3 -->
+      <div class="puppy-card glass-card rounded-3xl overflow-hidden shadow-lg" data-status="reserved">
+       <div class="relative overflow-hidden aspect-square">
+        <img src="https://swinginggatelabradoodles.com/wp-content/uploads/2024/09/IMG_8933.jpeg" alt="Luna - Apricot Female" class="puppy-image w-full h-full transition-transform duration-500 object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #FFF8E1, #FFECB3)'; this.alt='Puppy image unavailable';">
+        <div class="puppy-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6"><button class="w-full py-3 rounded-full font-semibold text-white transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D);"> Learn More </button>
+        </div><span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold text-white" style="background: linear-gradient(135deg, #FF9800, #FFA726);"> Reserved </span> <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium glass-card" style="color: #8B5A2B;"> ♀ Female </span>
+       </div>
+       <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+         <div>
+          <h3 class="text-xl font-bold mb-1" style="font-family: 'Playfair Display', serif; color: #3E2723;">Luna</h3>
+          <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #8D6E63;">Apricot</p>
+         </div>
+         <div class="text-right">
+          <p class="text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">10 weeks</p>
+         </div>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Miniature</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Fleece Coat</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Family Ready</span>
+        </div>
+        <p class="text-sm mb-4" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">The gentlest soul you'll ever meet. Luna is calm, affectionate, and perfect for first-time owners.</p>
+        <div class="flex justify-center pt-4 border-t" style="border-color: rgba(139, 90, 43, 0.1);"><button class="px-6 py-2 rounded-full text-sm font-medium transition-all opacity-60 cursor-not-allowed" style="font-family: 'Nunito', sans-serif; background: #9E9E9E; color: white;" disabled> Reserved </button>
+        </div>
+       </div>
+      </div><!-- Puppy Card 4 -->
+      <div class="puppy-card glass-card rounded-3xl overflow-hidden shadow-lg" data-status="available">
+       <div class="relative overflow-hidden aspect-square">
+        <img src="https://swinginggatelabradoodles.com/wp-content/uploads/2024/09/IMG_8932.jpeg" alt="Teddy - Red Parti Male" class="puppy-image w-full h-full transition-transform duration-500 object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #EFEBE9, #D7CCC8)'; this.alt='Puppy image unavailable';">
+        <div class="puppy-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6"><button class="w-full py-3 rounded-full font-semibold text-white transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D);"> Learn More </button>
+        </div><span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold text-white" style="background: linear-gradient(135deg, #4CAF50, #66BB6A);"> Available </span> <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium glass-card" style="color: #8B5A2B;"> ♂ Male </span>
+       </div>
+       <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+         <div>
+          <h3 class="text-xl font-bold mb-1" style="font-family: 'Playfair Display', serif; color: #3E2723;">Teddy</h3>
+          <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #8D6E63;">Red Parti</p>
+         </div>
+         <div class="text-right">
+          <p class="text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">8 weeks</p>
+         </div>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Medium</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Fleece Coat</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Social</span>
+        </div>
+        <p class="text-sm mb-4" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">True to his name, Teddy is a cuddly ball of fluff who loves everyone he meets!</p>
+        <div class="flex justify-center pt-4 border-t" style="border-color: rgba(139, 90, 43, 0.1);"><button class="px-6 py-2 rounded-full text-sm font-medium transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D); color: white;"> Inquire Now </button>
+        </div>
+       </div>
+      </div><!-- Puppy Card 5 -->
+      <div class="puppy-card glass-card rounded-3xl overflow-hidden shadow-lg" data-status="reserved">
+       <div class="relative overflow-hidden aspect-square">
+        <img src="https://swinginggatelabradoodles.com/wp-content/uploads/2024/09/IMG_8935.jpeg" alt="Daisy - Lavender Female" class="puppy-image w-full h-full transition-transform duration-500 object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #F3E5F5, #E1BEE7)'; this.alt='Puppy image unavailable';">
+        <div class="puppy-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6"><button class="w-full py-3 rounded-full font-semibold text-white transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D);"> Learn More </button>
+        </div><span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold text-white" style="background: linear-gradient(135deg, #FF9800, #FFA726);"> Reserved </span> <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium glass-card" style="color: #8B5A2B;"> ♀ Female </span>
+       </div>
+       <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+         <div>
+          <h3 class="text-xl font-bold mb-1" style="font-family: 'Playfair Display', serif; color: #3E2723;">Daisy</h3>
+          <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #8D6E63;">Lavender</p>
+         </div>
+         <div class="text-right">
+          <p class="text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">9 weeks</p>
+         </div>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Miniature</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Wool Coat</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Rare Color</span>
+        </div>
+        <p class="text-sm mb-4" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">A rare lavender beauty with a sweet disposition. Daisy is truly one of a kind!</p>
+        <div class="flex justify-center pt-4 border-t" style="border-color: rgba(139, 90, 43, 0.1);"><button class="px-6 py-2 rounded-full text-sm font-medium transition-all opacity-60 cursor-not-allowed" style="font-family: 'Nunito', sans-serif; background: #9E9E9E; color: white;" disabled> Reserved </button>
+        </div>
+       </div>
+      </div><!-- Puppy Card 6 -->
+      <div class="puppy-card glass-card rounded-3xl overflow-hidden shadow-lg" data-status="available">
+       <div class="relative overflow-hidden aspect-square">
+        <img src="https://swinginggatelabradoodles.com/wp-content/uploads/2024/09/IMG_8931.jpeg" alt="Max - Black Male" class="puppy-image w-full h-full transition-transform duration-500 object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #E8F5E9, #C8E6C9)'; this.alt='Puppy image unavailable';">
+        <div class="puppy-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6"><button class="w-full py-3 rounded-full font-semibold text-white transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D);"> Learn More </button>
+        </div><span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold text-white" style="background: linear-gradient(135deg, #4CAF50, #66BB6A);"> Available </span> <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium glass-card" style="color: #8B5A2B;"> ♂ Male </span>
+       </div>
+       <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+         <div>
+          <h3 class="text-xl font-bold mb-1" style="font-family: 'Playfair Display', serif; color: #3E2723;">Max</h3>
+          <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #8D6E63;">Black</p>
+         </div>
+         <div class="text-right">
+          <p class="text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">11 weeks</p>
+         </div>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Standard</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Fleece Coat</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Athletic</span>
+        </div>
+        <p class="text-sm mb-4" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">A confident boy with stunning black coat. Max is perfect for active families!</p>
+        <div class="flex justify-center pt-4 border-t" style="border-color: rgba(139, 90, 43, 0.1);"><button class="px-6 py-2 rounded-full text-sm font-medium transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D); color: white;"> Inquire Now </button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Breeder Info Section -->
+   <section class="py-16 sm:py-24 px-4" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.1), rgba(139, 90, 43, 0.05));">
+    <div class="max-w-4xl mx-auto">
+     <div class="glass-card rounded-3xl p-8 sm:p-12">
+      <div class="text-center mb-8"><span class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-4" style="font-family: 'Nunito', sans-serif; background: rgba(212, 165, 116, 0.3); color: #8B5A2B;"> 🏆 Our Heritage </span>
+       <h2 class="text-3xl sm:text-4xl font-bold mb-6" style="font-family: 'Playfair Display', serif; color: #3E2723;">A Proud Member of ALAA</h2>
+      </div>
+      <div class="space-y-6">
+       <p class="text-lg leading-relaxed" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">A proud member of the Australian Labradoodle Club of America, it is our goal here at Swinging Gate to provide the most loving environment possible for our puppies.</p>
+       <p class="text-lg leading-relaxed" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Our multi-generational Australian Labradoodles are bred from parents out of <span class="font-semibold" style="color: #8B5A2B;">Tegan Park</span> and/or <span class="font-semibold" style="color: #8B5A2B;">Rutland Manor</span> Research Centers in Australia. Staying true to the vision of those who founded this incredible breed is an important element of our breeding philosophy.</p>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 mt-8 border-t" style="border-color: rgba(139, 90, 43, 0.1);">
+        <div class="text-center">
+         <div class="text-5xl mb-3">
+          🌍
+         </div>
+         <h3 class="font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #3E2723;">Australian Lineage</h3>
+         <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Descended from renowned research centers</p>
+        </div>
+        <div class="text-center">
+         <div class="text-5xl mb-3">
+          ❤️
+         </div>
+         <h3 class="font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #3E2723;">Breed Vision</h3>
+         <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Honoring the founders' original vision</p>
+        </div>
+        <div class="text-center">
+         <div class="text-5xl mb-3">
+          🤝
+         </div>
+         <h3 class="font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #3E2723;">Community</h3>
+         <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Part of the ALAA community</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Why Choose Us Section -->
+   <section class="py-16 sm:py-24 px-4" style="background: linear-gradient(135deg, rgba(139, 90, 43, 0.05), rgba(212, 165, 116, 0.1));">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-center mb-12 sm:mb-16"><span class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-4" style="font-family: 'Nunito', sans-serif; background: rgba(212, 165, 116, 0.3); color: #8B5A2B;"> 💝 Why Choose Us </span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Playfair Display', serif; color: #3E2723;">The Swinging Gate Difference</h2>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="glass-card rounded-2xl p-8 text-center transition-transform hover:-translate-y-2 duration-300">
+       <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.3), rgba(139, 90, 43, 0.2));"><span class="text-3xl">❤️</span>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Playfair Display', serif; color: #3E2723;">Family Raised</h3>
+       <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Our puppies are raised in our home with love, socialization, and early neurological stimulation.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-8 text-center transition-transform hover:-translate-y-2 duration-300">
+       <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.3), rgba(139, 90, 43, 0.2));"><span class="text-3xl">🏥</span>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Playfair Display', serif; color: #3E2723;">Health Tested</h3>
+       <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">All parents are OFA certified and genetically tested. 2-year health guarantee included.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-8 text-center transition-transform hover:-translate-y-2 duration-300">
+       <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.3), rgba(139, 90, 43, 0.2));"><span class="text-3xl">🎓</span>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Playfair Display', serif; color: #3E2723;">Training Started</h3>
+       <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Basic potty training and crate introduction begins before your puppy comes home.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-8 text-center transition-transform hover:-translate-y-2 duration-300">
+       <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.3), rgba(139, 90, 43, 0.2));"><span class="text-3xl">📞</span>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Playfair Display', serif; color: #3E2723;">Lifetime Support</h3>
+       <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">We're here for you and your puppy forever. Questions? We're just a call away.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-8 text-center transition-transform hover:-translate-y-2 duration-300">
+       <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.3), rgba(139, 90, 43, 0.2));"><span class="text-3xl">🧬</span>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Playfair Display', serif; color: #3E2723;">ALAA Registered</h3>
+       <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">We're proud members of the Australian Labradoodle Association of America.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-8 text-center transition-transform hover:-translate-y-2 duration-300">
+       <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.3), rgba(139, 90, 43, 0.2));"><span class="text-3xl">📦</span>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Playfair Display', serif; color: #3E2723;">Puppy Package</h3>
+       <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Each puppy goes home with a starter kit, vet records, and comfort items.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="py-16 sm:py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+     <div class="glass-card rounded-3xl p-8 sm:p-12 shadow-xl">
+      <div class="text-center mb-10"><span class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-4" style="font-family: 'Nunito', sans-serif; background: rgba(212, 165, 116, 0.3); color: #8B5A2B;"> 📬 Get In Touch </span>
+       <h2 id="contact-heading" class="text-3xl sm:text-4xl font-bold mb-4" style="font-family: 'Playfair Display', serif; color: #3E2723;">Ready to Meet Your New Best Friend?</h2>
+       <p class="text-lg" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Fill out the form below and we'll get back to you within 24 hours</p>
+      </div>
+      <form id="contact-form" class="space-y-6">
+       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div><label for="name" class="block text-sm font-medium mb-2" style="font-family: 'Nunito', sans-serif; color: #5D4037;">Your Name</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl border-2 transition-all focus:outline-none focus:ring-2" style="border-color: rgba(139, 90, 43, 0.2); background: rgba(255,255,255,0.8);" placeholder="John Smith">
+        </div>
+        <div><label for="email" class="block text-sm font-medium mb-2" style="font-family: 'Nunito', sans-serif; color: #5D4037;">Email Address</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl border-2 transition-all focus:outline-none focus:ring-2" style="border-color: rgba(139, 90, 43, 0.2); background: rgba(255,255,255,0.8);" placeholder="john@example.com">
+        </div>
+       </div>
+       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div><label for="phone" class="block text-sm font-medium mb-2" style="font-family: 'Nunito', sans-serif; color: #5D4037;">Phone Number</label> <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-xl border-2 transition-all focus:outline-none focus:ring-2" style="border-color: rgba(139, 90, 43, 0.2); background: rgba(255,255,255,0.8);" placeholder="(555) 123-4567">
+        </div>
+        <div><label for="puppy" class="block text-sm font-medium mb-2" style="font-family: 'Nunito', sans-serif; color: #5D4037;">Interested In</label> <select id="puppy" name="puppy" class="w-full px-4 py-3 rounded-xl border-2 transition-all focus:outline-none focus:ring-2" style="border-color: rgba(139, 90, 43, 0.2); background: rgba(255,255,255,0.8);"> <option value="">Select a puppy...</option> <option value="bella">Bella - Caramel Cream</option> <option value="cooper">Cooper - Chocolate</option> <option value="teddy">Teddy - Red Parti</option> <option value="max">Max - Black</option> <option value="other">Other / Future Litter</option> </select>
+        </div>
+       </div>
+       <div><label for="message" class="block text-sm font-medium mb-2" style="font-family: 'Nunito', sans-serif; color: #5D4037;">Your Message</label> <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-xl border-2 transition-all focus:outline-none focus:ring-2 resize-none" style="border-color: rgba(139, 90, 43, 0.2); background: rgba(255,255,255,0.8);" placeholder="Tell us about yourself and why you'd like to adopt a Labradoodle..."></textarea>
+       </div>
+       <div class="text-center pt-4"><button type="submit" class="btn-primary inline-flex items-center justify-center px-10 py-4 rounded-full text-white font-semibold text-lg shadow-lg" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D);"> <span>Send Message</span>
+         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+         </svg></button>
+       </div>
+      </form><!-- Success Message (hidden by default) -->
+      <div id="success-message" class="hidden text-center py-8">
+       <div class="text-6xl mb-4">
+        🎉
+       </div>
+       <h3 class="text-2xl font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #3E2723;">Thank You!</h3>
+       <p style="font-family: 'Nunito', sans-serif; color: #6D4C41;">We've received your message and will be in touch soon!</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-12 px-4" style="background: linear-gradient(135deg, #5D4037, #4E342E);">
+    <div class="max-w-7xl mx-auto">
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div>
+       <div class="flex items-center space-x-2 mb-4"><span class="text-3xl">🐕</span> <span class="font-bold text-xl text-white" style="font-family: 'Playfair Display', serif;"> Swinging Gate </span>
+       </div>
+       <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">Raising exceptional Australian Labradoodles with love since 2012.</p>
+      </div>
+      <div>
+       <h4 class="font-bold mb-4 text-white" style="font-family: 'Nunito', sans-serif;">Quick Links</h4>
+       <div class="space-y-2"><a href="#" class="block text-sm transition-colors hover:text-amber-300" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">Our Dogs</a> <a href="#" class="block text-sm transition-colors hover:text-amber-300" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">Available Pups</a> <a href="#" class="block text-sm transition-colors hover:text-amber-300" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">Adoption Process</a> <a href="#" class="block text-sm transition-colors hover:text-amber-300" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">Testimonials</a>
+       </div>
+      </div>
+      <div>
+       <h4 class="font-bold mb-4 text-white" style="font-family: 'Nunito', sans-serif;">Connect With Us</h4>
+       <div class="flex space-x-4"><a href="https://www.facebook.com/SwingingGateLabradoodles/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110" style="background: #1877F2;"> <i class="fab fa-facebook-f text-white"></i> </a> <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);"> <i class="fab fa-instagram text-white"></i> </a> <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110" style="background: #000000;"> <i class="fab fa-tiktok text-white"></i> </a>
+       </div>
+      </div>
+     </div>
+     <div class="pt-8 border-t text-center" style="border-color: rgba(255,255,255,0.1);">
+      <div class="flex flex-wrap justify-center gap-6 mb-6">
+       <div class="text-center">
+        <div class="w-20 h-20 mx-auto mb-2 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.1); border: 2px solid rgba(212, 165, 116, 0.5);">
+         <i class="fas fa-check text-2xl" style="color: #D4A574;"></i>
+        </div>
+        <p class="text-xs" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">OFA Certified</p>
+       </div>
+       <div class="text-center">
+        <div class="w-20 h-20 mx-auto mb-2 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.1); border: 2px solid rgba(212, 165, 116, 0.5);">
+         <i class="fas fa-dna text-2xl" style="color: #D4A574;"></i>
+        </div>
+        <p class="text-xs" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">Genetically Tested</p>
+       </div>
+       <div class="text-center">
+        <div class="w-20 h-20 mx-auto mb-2 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.1); border: 2px solid rgba(212, 165, 116, 0.5);">
+         <i class="fas fa-shield-alt text-2xl" style="color: #D4A574;"></i>
+        </div>
+        <p class="text-xs" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">Health Guaranteed</p>
+       </div>
+       <div class="text-center">
+        <div class="w-20 h-20 mx-auto mb-2 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.1); border: 2px solid rgba(212, 165, 116, 0.5);">
+         <i class="fas fa-certificate text-2xl" style="color: #D4A574;"></i>
+        </div>
+        <p class="text-xs" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">ALAA Registered</p>
+       </div>
+      </div>
+      <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.5);">© 2024 Swinging Gate Labradoodles. All rights reserved.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // Default config
+    const defaultConfig = {
+      hero_title: 'Find Your Perfect Companion',
+      hero_subtitle: 'Discover our adorable, hypoallergenic puppies raised with love in a family environment. Each one is ready to bring joy to your home.',
+      contact_heading: 'Ready to Meet Your New Best Friend?',
+      primary_color: '#8B5A2B',
+      secondary_color: '#D4A574',
+      background_color: '#FDF6EE',
+      text_color: '#3E2723',
+      accent_color: '#A0522D',
+      font_family: 'Playfair Display'
+    };
+
+    // Initialize Element SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => {
+          const heroTitle = document.getElementById('hero-title');
+          const heroSubtitle = document.getElementById('hero-subtitle');
+          const contactHeading = document.getElementById('contact-heading');
+          
+          if (heroTitle) {
+            heroTitle.innerHTML = `${config.hero_title || defaultConfig.hero_title}<br><span class="gradient-text">Companion</span>`;
+          }
+          if (heroSubtitle) {
+            heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+          }
+          if (contactHeading) {
+            contactHeading.textContent = config.contact_heading || defaultConfig.contact_heading;
+          }
+          
+          // Apply font family
+          const fontFamily = config.font_family || defaultConfig.font_family;
+          document.querySelectorAll('[style*="Playfair Display"]').forEach(el => {
+            el.style.fontFamily = `${fontFamily}, serif`;
+          });
+        },
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.secondary_color || defaultConfig.secondary_color,
+              set: (value) => {
+                config.secondary_color = value;
+                window.elementSdk.setConfig({ secondary_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => config.primary_color || defaultConfig.primary_color,
+              set: (value) => {
+                config.primary_color = value;
+                window.elementSdk.setConfig({ primary_color: value });
+              }
+            },
+            {
+              get: () => config.accent_color || defaultConfig.accent_color,
+              set: (value) => {
+                config.accent_color = value;
+                window.elementSdk.setConfig({ accent_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['hero_title', config.hero_title || defaultConfig.hero_title],
+          ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+          ['contact_heading', config.contact_heading || defaultConfig.contact_heading]
+        ])
+      });
+    }
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const puppyCards = document.querySelectorAll('.puppy-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active state
+        filterBtns.forEach(b => {
+          b.style.background = 'rgba(212, 165, 116, 0.3)';
+          b.style.color = '#8B5A2B';
+        });
+        btn.style.background = '#8B5A2B';
+        btn.style.color = 'white';
+
+        const filter = btn.dataset.filter;
+
+        puppyCards.forEach(card => {
+          if (filter === 'all') {
+            card.style.display = 'block';
+          } else {
+            if (card.dataset.status === filter) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+
+    // Form submission
+    const contactForm = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Hide form, show success
+      contactForm.style.display = 'none';
+      successMessage.classList.remove('hidden');
+      successMessage.classList.add('animate-scale-in');
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          // Close mobile menu if open
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    });
+
+    // Add scroll-based animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.puppy-card').forEach((card, index) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+      observer.observe(card);
+    });
+  </script>
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    
+    @keyframes pawPrint {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.1); }
+    }
+    
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    
+    .animate-scale-in {
+      animation: scaleIn 0.5s ease-out forwards;
+    }
+    
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .animate-shimmer {
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      background-size: 200% 100%;
+      animation: shimmer 2s infinite;
+    }
+    
+    .animate-paw {
+      animation: pawPrint 2s ease-in-out infinite;
+    }
+    
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    .delay-500 { animation-delay: 0.5s; }
+    .delay-600 { animation-delay: 0.6s; }
+    
+    .puppy-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .puppy-card:hover {
+      transform: translateY(-12px) scale(1.02);
+    }
+    
+    .puppy-card:hover .puppy-image {
+      transform: scale(1.1);
+    }
+    
+    .puppy-card:hover .puppy-overlay {
+      opacity: 1;
+    }
+    
+    .btn-primary {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px -10px rgba(139, 90, 43, 0.5);
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #8B5A2B, #D4A574, #8B5A2B);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .glass-card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    .paw-bg {
+      position: absolute;
+      font-size: 60px;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+    
+    .scroll-indicator {
+      animation: float 2s ease-in-out infinite;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #FDF6EE;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #D4A574, #8B5A2B);
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #C4956A, #7A4F26);
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <div id="app-wrapper" class="w-full h-full overflow-auto" style="background: linear-gradient(135deg, #FDF6EE 0%, #FAF0E4 50%, #F5E6D3 100%);"><!-- Floating Paw Prints Background -->
+   <div class="paw-bg animate-paw" style="top: 10%; left: 5%;">
+    🐾
+   </div>
+   <div class="paw-bg animate-paw delay-300" style="top: 30%; right: 8%;">
+    🐾
+   </div>
+   <div class="paw-bg animate-paw delay-500" style="top: 60%; left: 3%;">
+    🐾
+   </div>
+   <div class="paw-bg animate-paw delay-200" style="top: 80%; right: 5%;">
+    🐾
+   </div><!-- Navigation -->
+   <nav class="fixed top-0 left-0 right-0 z-50 glass-card animate-fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex justify-between items-center h-16 sm:h-20">
+      <div class="flex items-center space-x-2"><span class="text-2xl sm:text-3xl">🐕</span> <span class="font-bold text-lg sm:text-xl" style="font-family: 'Playfair Display', serif; color: #5D4037;"> Swinging Gate </span>
+      </div>
+      <div class="hidden md:flex items-center space-x-8"><a href="#" class="text-sm font-medium transition-colors hover:text-amber-700" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Home</a> <a href="#" class="text-sm font-medium transition-colors hover:text-amber-700" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Our Dogs</a> <a href="#" class="text-sm font-medium border-b-2 border-amber-600" style="font-family: 'Nunito', sans-serif; color: #8B5A2B;">Available Pups</a> <a href="#" class="text-sm font-medium transition-colors hover:text-amber-700" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">About Us</a> <a href="#" class="text-sm font-medium transition-colors hover:text-amber-700" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Contact</a>
+      </div><button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-amber-100 transition-colors">
+       <svg class="w-6 h-6" style="color: #5D4037;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+       </svg></button>
+     </div>
+    </div><!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden glass-card border-t" style="border-color: rgba(139, 90, 43, 0.1);">
+     <div class="px-4 py-3 space-y-2"><a href="#" class="block py-2 text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Home</a> <a href="#" class="block py-2 text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Our Dogs</a> <a href="#" class="block py-2 text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #8B5A2B;">Available Pups</a> <a href="#" class="block py-2 text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">About Us</a> <a href="#" class="block py-2 text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Contact</a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section class="relative pt-24 sm:pt-32 pb-16 sm:pb-24 px-4">
+    <div class="max-w-7xl mx-auto text-center">
+     <div class="animate-fade-in-up opacity-0" style="animation-fill-mode: forwards;"><span class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-6" style="font-family: 'Nunito', sans-serif; background: rgba(212, 165, 116, 0.3); color: #8B5A2B;"> 🐾 Miniature Australian Labradoodles </span>
+     </div>
+     <h1 id="hero-title" class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up opacity-0 delay-100" style="font-family: 'Playfair Display', serif; color: #3E2723; animation-fill-mode: forwards;">Find Your Perfect<br><span class="gradient-text">Companion</span></h1>
+     <p id="hero-subtitle" class="text-lg sm:text-xl max-w-2xl mx-auto mb-10 animate-fade-in-up opacity-0 delay-200" style="font-family: 'Nunito', sans-serif; color: #6D4C41; animation-fill-mode: forwards;">Discover our adorable, hypoallergenic puppies raised with love in a family environment. Each one is ready to bring joy to your home.</p>
+     <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up opacity-0 delay-300" style="animation-fill-mode: forwards;"><a href="#puppies" class="btn-primary inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-semibold shadow-lg" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D);"> <span>View Available Pups</span>
+       <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+       </svg></a> <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold border-2 transition-all hover:bg-amber-50" style="font-family: 'Nunito', sans-serif; border-color: #8B5A2B; color: #8B5A2B;"> Contact Us </a>
+     </div><!-- Scroll Indicator -->
+     <div class="scroll-indicator mt-16 animate-fade-in opacity-0 delay-500" style="animation-fill-mode: forwards;">
+      <svg class="w-8 h-8 mx-auto" style="color: #D4A574;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+     </div>
+    </div>
+   </section><!-- Stats Section -->
+   <section class="py-12 sm:py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="glass-card rounded-2xl p-6 text-center animate-scale-in opacity-0" style="animation-fill-mode: forwards;">
+       <div class="text-3xl sm:text-4xl font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #8B5A2B;">
+        150+
+       </div>
+       <div class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">
+        Happy Families
+       </div>
+      </div>
+      <div class="glass-card rounded-2xl p-6 text-center animate-scale-in opacity-0 delay-100" style="animation-fill-mode: forwards;">
+       <div class="text-3xl sm:text-4xl font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #8B5A2B;">
+        10+
+       </div>
+       <div class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">
+        Years Experience
+       </div>
+      </div>
+      <div class="glass-card rounded-2xl p-6 text-center animate-scale-in opacity-0 delay-200" style="animation-fill-mode: forwards;">
+       <div class="text-3xl sm:text-4xl font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #8B5A2B;">
+        100%
+       </div>
+       <div class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">
+        Health Tested
+       </div>
+      </div>
+      <div class="glass-card rounded-2xl p-6 text-center animate-scale-in opacity-0 delay-300" style="animation-fill-mode: forwards;">
+       <div class="text-3xl sm:text-4xl font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #8B5A2B;">
+        5⭐
+       </div>
+       <div class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">
+        Average Rating
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Available Puppies Section -->
+   <section id="puppies" class="py-16 sm:py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-center mb-12 sm:mb-16"><span class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-4" style="font-family: 'Nunito', sans-serif; background: rgba(212, 165, 116, 0.3); color: #8B5A2B;"> ✨ Available Now </span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Playfair Display', serif; color: #3E2723;">Meet Our Adorable Pups</h2>
+      <p class="text-lg max-w-2xl mx-auto" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Each puppy comes with health guarantee, vaccinations, and lifetime breeder support</p>
+     </div><!-- Filter Tabs -->
+     <div class="flex flex-wrap justify-center gap-3 mb-10"><button class="filter-btn active px-6 py-3 rounded-full font-medium transition-all" style="font-family: 'Nunito', sans-serif; background: #8B5A2B; color: white;" data-filter="all"> All Pups </button> <button class="filter-btn px-6 py-3 rounded-full font-medium transition-all hover:bg-amber-100" style="font-family: 'Nunito', sans-serif; background: rgba(212, 165, 116, 0.3); color: #8B5A2B;" data-filter="available"> Available </button> <button class="filter-btn px-6 py-3 rounded-full font-medium transition-all hover:bg-amber-100" style="font-family: 'Nunito', sans-serif; background: rgba(212, 165, 116, 0.3); color: #8B5A2B;" data-filter="reserved"> Reserved </button>
+     </div><!-- Puppies Grid -->
+     <div id="puppies-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"><!-- Puppy Card 1 -->
+      <div class="puppy-card glass-card rounded-3xl overflow-hidden shadow-lg" data-status="available">
+       <div class="relative overflow-hidden aspect-square">
+        <div class="puppy-image w-full h-full transition-transform duration-500" style="background: linear-gradient(135deg, #F5E6D3, #E8D5C4); display: flex; align-items: center; justify-content: center;"><span class="text-8xl">🐶</span>
+        </div>
+        <div class="puppy-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6"><button class="w-full py-3 rounded-full font-semibold text-white transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D);"> Learn More </button>
+        </div><span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold text-white" style="background: linear-gradient(135deg, #4CAF50, #66BB6A);"> Available </span> <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium glass-card" style="color: #8B5A2B;"> ♀ Female </span>
+       </div>
+       <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+         <div>
+          <h3 class="text-xl font-bold mb-1" style="font-family: 'Playfair Display', serif; color: #3E2723;">Bella</h3>
+          <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #8D6E63;">Caramel Cream</p>
+         </div>
+         <div class="text-right">
+          <p class="text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">8 weeks</p>
+         </div>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Miniature</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Fleece Coat</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Hypoallergenic</span>
+        </div>
+        <p class="text-sm mb-4" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">A sweet, playful girl with the softest caramel coat. Loves cuddles and is great with kids!</p>
+        <div class="flex justify-center pt-4 border-t" style="border-color: rgba(139, 90, 43, 0.1);"><button class="px-6 py-2 rounded-full text-sm font-medium transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D); color: white;"> Inquire Now </button>
+        </div>
+       </div>
+      </div><!-- Puppy Card 2 -->
+      <div class="puppy-card glass-card rounded-3xl overflow-hidden shadow-lg" data-status="available">
+       <div class="relative overflow-hidden aspect-square">
+        <div class="puppy-image w-full h-full transition-transform duration-500" style="background: linear-gradient(135deg, #D7CCC8, #BCAAA4); display: flex; align-items: center; justify-content: center;"><span class="text-8xl">🐕</span>
+        </div>
+        <div class="puppy-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6"><button class="w-full py-3 rounded-full font-semibold text-white transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D);"> Learn More </button>
+        </div><span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold text-white" style="background: linear-gradient(135deg, #4CAF50, #66BB6A);"> Available </span> <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium glass-card" style="color: #8B5A2B;"> ♂ Male </span>
+       </div>
+       <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+         <div>
+          <h3 class="text-xl font-bold mb-1" style="font-family: 'Playfair Display', serif; color: #3E2723;">Cooper</h3>
+          <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #8D6E63;">Chocolate</p>
+         </div>
+         <div class="text-right">
+          <p class="text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">9 weeks</p>
+         </div>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Miniature</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Wool Coat</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Low Shedding</span>
+        </div>
+        <p class="text-sm mb-4" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">An adventurous spirit with a heart of gold. Cooper is smart, trainable, and full of energy!</p>
+        <div class="flex justify-center pt-4 border-t" style="border-color: rgba(139, 90, 43, 0.1);"><button class="px-6 py-2 rounded-full text-sm font-medium transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D); color: white;"> Inquire Now </button>
+        </div>
+       </div>
+      </div><!-- Puppy Card 3 -->
+      <div class="puppy-card glass-card rounded-3xl overflow-hidden shadow-lg" data-status="reserved">
+       <div class="relative overflow-hidden aspect-square">
+        <div class="puppy-image w-full h-full transition-transform duration-500" style="background: linear-gradient(135deg, #FFF8E1, #FFECB3); display: flex; align-items: center; justify-content: center;"><span class="text-8xl">🐩</span>
+        </div>
+        <div class="puppy-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6"><button class="w-full py-3 rounded-full font-semibold text-white transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D);"> Learn More </button>
+        </div><span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold text-white" style="background: linear-gradient(135deg, #FF9800, #FFA726);"> Reserved </span> <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium glass-card" style="color: #8B5A2B;"> ♀ Female </span>
+       </div>
+       <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+         <div>
+          <h3 class="text-xl font-bold mb-1" style="font-family: 'Playfair Display', serif; color: #3E2723;">Luna</h3>
+          <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #8D6E63;">Apricot</p>
+         </div>
+         <div class="text-right">
+          <p class="text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">10 weeks</p>
+         </div>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Miniature</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Fleece Coat</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Family Ready</span>
+        </div>
+        <p class="text-sm mb-4" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">The gentlest soul you'll ever meet. Luna is calm, affectionate, and perfect for first-time owners.</p>
+        <div class="flex justify-center pt-4 border-t" style="border-color: rgba(139, 90, 43, 0.1);"><button class="px-4 py-2 rounded-full text-sm font-medium transition-all opacity-60 cursor-not-allowed" style="font-family: 'Nunito', sans-serif; background: #9E9E9E; color: white;" disabled> Reserved </button>
+        </div>
+       </div>
+      </div><!-- Puppy Card 4 -->
+      <div class="puppy-card glass-card rounded-3xl overflow-hidden shadow-lg" data-status="available">
+       <div class="relative overflow-hidden aspect-square">
+        <div class="puppy-image w-full h-full transition-transform duration-500" style="background: linear-gradient(135deg, #EFEBE9, #D7CCC8); display: flex; align-items: center; justify-content: center;"><span class="text-8xl">🐶</span>
+        </div>
+        <div class="puppy-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6"><button class="w-full py-3 rounded-full font-semibold text-white transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D);"> Learn More </button>
+        </div><span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold text-white" style="background: linear-gradient(135deg, #4CAF50, #66BB6A);"> Available </span> <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium glass-card" style="color: #8B5A2B;"> ♂ Male </span>
+       </div>
+       <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+         <div>
+          <h3 class="text-xl font-bold mb-1" style="font-family: 'Playfair Display', serif; color: #3E2723;">Teddy</h3>
+          <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #8D6E63;">Red Parti</p>
+         </div>
+         <div class="text-right">
+          <p class="text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">8 weeks</p>
+         </div>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Medium</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Fleece Coat</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Social</span>
+        </div>
+        <p class="text-sm mb-4" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">True to his name, Teddy is a cuddly ball of fluff who loves everyone he meets!</p>
+        <div class="flex justify-center pt-4 border-t" style="border-color: rgba(139, 90, 43, 0.1);"><button class="px-6 py-2 rounded-full text-sm font-medium transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D); color: white;"> Inquire Now </button>
+        </div>
+       </div>
+      </div><!-- Puppy Card 5 -->
+      <div class="puppy-card glass-card rounded-3xl overflow-hidden shadow-lg" data-status="reserved">
+       <div class="relative overflow-hidden aspect-square">
+        <div class="puppy-image w-full h-full transition-transform duration-500" style="background: linear-gradient(135deg, #F3E5F5, #E1BEE7); display: flex; align-items: center; justify-content: center;"><span class="text-8xl">🐕‍🦺</span>
+        </div>
+        <div class="puppy-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6"><button class="w-full py-3 rounded-full font-semibold text-white transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D);"> Learn More </button>
+        </div><span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold text-white" style="background: linear-gradient(135deg, #FF9800, #FFA726);"> Reserved </span> <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium glass-card" style="color: #8B5A2B;"> ♀ Female </span>
+       </div>
+       <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+         <div>
+          <h3 class="text-xl font-bold mb-1" style="font-family: 'Playfair Display', serif; color: #3E2723;">Daisy</h3>
+          <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #8D6E63;">Lavender</p>
+         </div>
+         <div class="text-right">
+          <p class="text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">9 weeks</p>
+         </div>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Miniature</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Wool Coat</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Rare Color</span>
+        </div>
+        <p class="text-sm mb-4" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">A rare lavender beauty with a sweet disposition. Daisy is truly one of a kind!</p>
+        <div class="flex justify-center pt-4 border-t" style="border-color: rgba(139, 90, 43, 0.1);"><button class="px-4 py-2 rounded-full text-sm font-medium transition-all opacity-60 cursor-not-allowed" style="font-family: 'Nunito', sans-serif; background: #9E9E9E; color: white;" disabled> Reserved </button>
+        </div>
+       </div>
+      </div><!-- Puppy Card 6 -->
+      <div class="puppy-card glass-card rounded-3xl overflow-hidden shadow-lg" data-status="available">
+       <div class="relative overflow-hidden aspect-square">
+        <div class="puppy-image w-full h-full transition-transform duration-500" style="background: linear-gradient(135deg, #E8F5E9, #C8E6C9); display: flex; align-items: center; justify-content: center;"><span class="text-8xl">🦮</span>
+        </div>
+        <div class="puppy-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6"><button class="w-full py-3 rounded-full font-semibold text-white transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D);"> Learn More </button>
+        </div><span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold text-white" style="background: linear-gradient(135deg, #4CAF50, #66BB6A);"> Available </span> <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium glass-card" style="color: #8B5A2B;"> ♂ Male </span>
+       </div>
+       <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+         <div>
+          <h3 class="text-xl font-bold mb-1" style="font-family: 'Playfair Display', serif; color: #3E2723;">Max</h3>
+          <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #8D6E63;">Black</p>
+         </div>
+         <div class="text-right">
+          <p class="text-sm font-medium" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">11 weeks</p>
+         </div>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Standard</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Fleece Coat</span> <span class="px-3 py-1 rounded-full text-xs" style="background: rgba(212, 165, 116, 0.2); color: #8B5A2B;">Athletic</span>
+        </div>
+        <p class="text-sm mb-4" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">A confident boy with stunning black coat. Max is perfect for active families!</p>
+        <div class="flex justify-center pt-4 border-t" style="border-color: rgba(139, 90, 43, 0.1);"><button class="px-6 py-2 rounded-full text-sm font-medium transition-all hover:scale-105" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D); color: white;"> Inquire Now </button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Breeder Info Section -->
+   <section class="py-16 sm:py-24 px-4" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.1), rgba(139, 90, 43, 0.05));">
+    <div class="max-w-4xl mx-auto">
+     <div class="glass-card rounded-3xl p-8 sm:p-12">
+      <div class="text-center mb-8"><span class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-4" style="font-family: 'Nunito', sans-serif; background: rgba(212, 165, 116, 0.3); color: #8B5A2B;"> 🏆 Our Heritage </span>
+       <h2 class="text-3xl sm:text-4xl font-bold mb-6" style="font-family: 'Playfair Display', serif; color: #3E2723;">A Proud Member of ALAA</h2>
+      </div>
+      <div class="space-y-6">
+       <p class="text-lg leading-relaxed" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">A proud member of the Australian Labradoodle Club of America, it is our goal here at Swinging Gate to provide the most loving environment possible for our puppies.</p>
+       <p class="text-lg leading-relaxed" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Our multi-generational Australian Labradoodles are bred from parents out of <span class="font-semibold" style="color: #8B5A2B;">Tegan Park</span> and/or <span class="font-semibold" style="color: #8B5A2B;">Rutland Manor</span> Research Centers in Australia. Staying true to the vision of those who founded this incredible breed is an important element of our breeding philosophy.</p>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 mt-8 border-t" style="border-color: rgba(139, 90, 43, 0.1);">
+        <div class="text-center">
+         <div class="text-5xl mb-3">
+          🌍
+         </div>
+         <h3 class="font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #3E2723;">Australian Lineage</h3>
+         <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Descended from renowned research centers</p>
+        </div>
+        <div class="text-center">
+         <div class="text-5xl mb-3">
+          ❤️
+         </div>
+         <h3 class="font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #3E2723;">Breed Vision</h3>
+         <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Honoring the founders' original vision</p>
+        </div>
+        <div class="text-center">
+         <div class="text-5xl mb-3">
+          🤝
+         </div>
+         <h3 class="font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #3E2723;">Community</h3>
+         <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Part of the ALAA community</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Why Choose Us Section -->
+   <section class="py-16 sm:py-24 px-4" style="background: linear-gradient(135deg, rgba(139, 90, 43, 0.05), rgba(212, 165, 116, 0.1));">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-center mb-12 sm:mb-16"><span class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-4" style="font-family: 'Nunito', sans-serif; background: rgba(212, 165, 116, 0.3); color: #8B5A2B;"> 💝 Why Choose Us </span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Playfair Display', serif; color: #3E2723;">The Swinging Gate Difference</h2>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="glass-card rounded-2xl p-8 text-center transition-transform hover:-translate-y-2 duration-300">
+       <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.3), rgba(139, 90, 43, 0.2));"><span class="text-3xl">❤️</span>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Playfair Display', serif; color: #3E2723;">Family Raised</h3>
+       <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Our puppies are raised in our home with love, socialization, and early neurological stimulation.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-8 text-center transition-transform hover:-translate-y-2 duration-300">
+       <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.3), rgba(139, 90, 43, 0.2));"><span class="text-3xl">🏥</span>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Playfair Display', serif; color: #3E2723;">Health Tested</h3>
+       <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">All parents are OFA certified and genetically tested. 2-year health guarantee included.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-8 text-center transition-transform hover:-translate-y-2 duration-300">
+       <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.3), rgba(139, 90, 43, 0.2));"><span class="text-3xl">🎓</span>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Playfair Display', serif; color: #3E2723;">Training Started</h3>
+       <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Basic potty training and crate introduction begins before your puppy comes home.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-8 text-center transition-transform hover:-translate-y-2 duration-300">
+       <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.3), rgba(139, 90, 43, 0.2));"><span class="text-3xl">📞</span>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Playfair Display', serif; color: #3E2723;">Lifetime Support</h3>
+       <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">We're here for you and your puppy forever. Questions? We're just a call away.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-8 text-center transition-transform hover:-translate-y-2 duration-300">
+       <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.3), rgba(139, 90, 43, 0.2));"><span class="text-3xl">🧬</span>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Playfair Display', serif; color: #3E2723;">ALAA Registered</h3>
+       <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">We're proud members of the Australian Labradoodle Association of America.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-8 text-center transition-transform hover:-translate-y-2 duration-300">
+       <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.3), rgba(139, 90, 43, 0.2));"><span class="text-3xl">📦</span>
+       </div>
+       <h3 class="text-xl font-bold mb-3" style="font-family: 'Playfair Display', serif; color: #3E2723;">Puppy Package</h3>
+       <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Each puppy goes home with a starter kit, vet records, and comfort items.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="py-16 sm:py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+     <div class="glass-card rounded-3xl p-8 sm:p-12 shadow-xl">
+      <div class="text-center mb-10"><span class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-4" style="font-family: 'Nunito', sans-serif; background: rgba(212, 165, 116, 0.3); color: #8B5A2B;"> 📬 Get In Touch </span>
+       <h2 id="contact-heading" class="text-3xl sm:text-4xl font-bold mb-4" style="font-family: 'Playfair Display', serif; color: #3E2723;">Ready to Meet Your New Best Friend?</h2>
+       <p class="text-lg" style="font-family: 'Nunito', sans-serif; color: #6D4C41;">Fill out the form below and we'll get back to you within 24 hours</p>
+      </div>
+      <form id="contact-form" class="space-y-6">
+       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div><label for="name" class="block text-sm font-medium mb-2" style="font-family: 'Nunito', sans-serif; color: #5D4037;">Your Name</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl border-2 transition-all focus:outline-none focus:ring-2" style="border-color: rgba(139, 90, 43, 0.2); background: rgba(255,255,255,0.8);" placeholder="John Smith">
+        </div>
+        <div><label for="email" class="block text-sm font-medium mb-2" style="font-family: 'Nunito', sans-serif; color: #5D4037;">Email Address</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl border-2 transition-all focus:outline-none focus:ring-2" style="border-color: rgba(139, 90, 43, 0.2); background: rgba(255,255,255,0.8);" placeholder="john@example.com">
+        </div>
+       </div>
+       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div><label for="phone" class="block text-sm font-medium mb-2" style="font-family: 'Nunito', sans-serif; color: #5D4037;">Phone Number</label> <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-xl border-2 transition-all focus:outline-none focus:ring-2" style="border-color: rgba(139, 90, 43, 0.2); background: rgba(255,255,255,0.8);" placeholder="(555) 123-4567">
+        </div>
+        <div><label for="puppy" class="block text-sm font-medium mb-2" style="font-family: 'Nunito', sans-serif; color: #5D4037;">Interested In</label> <select id="puppy" name="puppy" class="w-full px-4 py-3 rounded-xl border-2 transition-all focus:outline-none focus:ring-2" style="border-color: rgba(139, 90, 43, 0.2); background: rgba(255,255,255,0.8);"> <option value="">Select a puppy...</option> <option value="bella">Bella - Caramel Cream</option> <option value="cooper">Cooper - Chocolate</option> <option value="teddy">Teddy - Red Parti</option> <option value="max">Max - Black</option> <option value="other">Other / Future Litter</option> </select>
+        </div>
+       </div>
+       <div><label for="message" class="block text-sm font-medium mb-2" style="font-family: 'Nunito', sans-serif; color: #5D4037;">Your Message</label> <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-xl border-2 transition-all focus:outline-none focus:ring-2 resize-none" style="border-color: rgba(139, 90, 43, 0.2); background: rgba(255,255,255,0.8);" placeholder="Tell us about yourself and why you'd like to adopt a Labradoodle..."></textarea>
+       </div>
+       <div class="text-center pt-4"><button type="submit" class="btn-primary inline-flex items-center justify-center px-10 py-4 rounded-full text-white font-semibold text-lg shadow-lg" style="font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #8B5A2B, #A0522D);"> <span>Send Message</span>
+         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+         </svg></button>
+       </div>
+      </form><!-- Success Message (hidden by default) -->
+      <div id="success-message" class="hidden text-center py-8">
+       <div class="text-6xl mb-4">
+        🎉
+       </div>
+       <h3 class="text-2xl font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #3E2723;">Thank You!</h3>
+       <p style="font-family: 'Nunito', sans-serif; color: #6D4C41;">We've received your message and will be in touch soon!</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-12 px-4" style="background: linear-gradient(135deg, #5D4037, #4E342E);">
+    <div class="max-w-7xl mx-auto">
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div>
+       <div class="flex items-center space-x-2 mb-4"><span class="text-3xl">🐕</span> <span class="font-bold text-xl text-white" style="font-family: 'Playfair Display', serif;"> Swinging Gate </span>
+       </div>
+       <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">Raising exceptional Australian Labradoodles with love since 2012.</p>
+      </div>
+      <div>
+       <h4 class="font-bold mb-4 text-white" style="font-family: 'Nunito', sans-serif;">Quick Links</h4>
+       <div class="space-y-2"><a href="#" class="block text-sm transition-colors hover:text-amber-300" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">Our Dogs</a> <a href="#" class="block text-sm transition-colors hover:text-amber-300" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">Available Pups</a> <a href="#" class="block text-sm transition-colors hover:text-amber-300" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">Adoption Process</a> <a href="#" class="block text-sm transition-colors hover:text-amber-300" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">Testimonials</a>
+       </div>
+      </div>
+      <div>
+       <h4 class="font-bold mb-4 text-white" style="font-family: 'Nunito', sans-serif;">Connect With Us</h4>
+       <div class="flex space-x-4"><a href="https://www.facebook.com/SwingingGateLabradoodles/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110" style="background: #1877F2;"> <i class="fab fa-facebook-f text-white"></i> </a> <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);"> <i class="fab fa-instagram text-white"></i> </a> <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110" style="background: #000000;"> <i class="fab fa-tiktok text-white"></i> </a>
+       </div>
+      </div>
+     </div>
+     <div class="pt-8 border-t text-center" style="border-color: rgba(255,255,255,0.1);">
+      <div class="flex flex-wrap justify-center gap-6 mb-6">
+       <div class="text-center">
+        <div class="w-20 h-20 mx-auto mb-2 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.1); border: 2px solid rgba(212, 165, 116, 0.5);">
+         <i class="fas fa-check text-2xl" style="color: #D4A574;"></i>
+        </div>
+        <p class="text-xs" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">OFA Certified</p>
+       </div>
+       <div class="text-center">
+        <div class="w-20 h-20 mx-auto mb-2 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.1); border: 2px solid rgba(212, 165, 116, 0.5);">
+         <i class="fas fa-dna text-2xl" style="color: #D4A574;"></i>
+        </div>
+        <p class="text-xs" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">Genetically Tested</p>
+       </div>
+       <div class="text-center">
+        <div class="w-20 h-20 mx-auto mb-2 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.1); border: 2px solid rgba(212, 165, 116, 0.5);">
+         <i class="fas fa-shield-alt text-2xl" style="color: #D4A574;"></i>
+        </div>
+        <p class="text-xs" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">Health Guaranteed</p>
+       </div>
+       <div class="text-center">
+        <div class="w-20 h-20 mx-auto mb-2 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.1); border: 2px solid rgba(212, 165, 116, 0.5);">
+         <i class="fas fa-certificate text-2xl" style="color: #D4A574;"></i>
+        </div>
+        <p class="text-xs" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.7);">ALAA Registered</p>
+       </div>
+      </div>
+      <p class="text-sm" style="font-family: 'Nunito', sans-serif; color: rgba(255,255,255,0.5);">© 2024 Swinging Gate Labradoodles. All rights reserved.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // Default config
+    const defaultConfig = {
+      hero_title: 'Find Your Perfect Companion',
+      hero_subtitle: 'Discover our adorable, hypoallergenic puppies raised with love in a family environment. Each one is ready to bring joy to your home.',
+      contact_heading: 'Ready to Meet Your New Best Friend?',
+      primary_color: '#8B5A2B',
+      secondary_color: '#D4A574',
+      background_color: '#FDF6EE',
+      text_color: '#3E2723',
+      accent_color: '#A0522D',
+      font_family: 'Playfair Display'
+    };
+
+    // Initialize Element SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => {
+          const heroTitle = document.getElementById('hero-title');
+          const heroSubtitle = document.getElementById('hero-subtitle');
+          const contactHeading = document.getElementById('contact-heading');
+          
+          if (heroTitle) {
+            heroTitle.innerHTML = `${config.hero_title || defaultConfig.hero_title}<br><span class="gradient-text">Companion</span>`;
+          }
+          if (heroSubtitle) {
+            heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+          }
+          if (contactHeading) {
+            contactHeading.textContent = config.contact_heading || defaultConfig.contact_heading;
+          }
+          
+          // Apply font family
+          const fontFamily = config.font_family || defaultConfig.font_family;
+          document.querySelectorAll('[style*="Playfair Display"]').forEach(el => {
+            el.style.fontFamily = `${fontFamily}, serif`;
+          });
+        },
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.secondary_color || defaultConfig.secondary_color,
+              set: (value) => {
+                config.secondary_color = value;
+                window.elementSdk.setConfig({ secondary_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => config.primary_color || defaultConfig.primary_color,
+              set: (value) => {
+                config.primary_color = value;
+                window.elementSdk.setConfig({ primary_color: value });
+              }
+            },
+            {
+              get: () => config.accent_color || defaultConfig.accent_color,
+              set: (value) => {
+                config.accent_color = value;
+                window.elementSdk.setConfig({ accent_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['hero_title', config.hero_title || defaultConfig.hero_title],
+          ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+          ['contact_heading', config.contact_heading || defaultConfig.contact_heading]
+        ])
+      });
+    }
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const puppyCards = document.querySelectorAll('.puppy-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active state
+        filterBtns.forEach(b => {
+          b.style.background = 'rgba(212, 165, 116, 0.3)';
+          b.style.color = '#8B5A2B';
+        });
+        btn.style.background = '#8B5A2B';
+        btn.style.color = 'white';
+
+        const filter = btn.dataset.filter;
+
+        puppyCards.forEach(card => {
+          if (filter === 'all') {
+            card.style.display = 'block';
+          } else {
+            if (card.dataset.status === filter) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+
+    // Form submission
+    const contactForm = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Hide form, show success
+      contactForm.style.display = 'none';
+      successMessage.classList.remove('hidden');
+      successMessage.classList.add('animate-scale-in');
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          // Close mobile menu if open
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    });
+
+    // Add scroll-based animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.puppy-card').forEach((card, index) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+      observer.observe(card);
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d74066891f6c953',t:'MTc3MjY2MDI3Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
